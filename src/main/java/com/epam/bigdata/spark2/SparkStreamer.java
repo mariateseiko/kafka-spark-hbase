@@ -66,7 +66,7 @@ public class SparkStreamer {
 
         Configuration hConf = HBaseConfiguration.create();
         conf.set("hbase.zookeeper.property.clientPort", "2181");
-        conf.set("hbase.zookeeper.quorum", "sandbox.hortonworks.com");
+        conf.set("hbase.zookeeper.quorum", "localhost");
         conf.set("zookeeper.znode.parent", "/hbase-unsecure");
 
         JavaPairReceiverInputDStream<String, String> logs = KafkaUtils.createStream(jsc, quorum, group, topicMap);
